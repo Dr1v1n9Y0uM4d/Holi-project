@@ -1,1 +1,13 @@
-hsygyfyuyfuy
+play1 = input ("Enter player 1 name: ")
+play2 = input ("Enter player 2 name: ")
+# choose colour (red and purple)
+
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+vb = "|"
+s = "\t+---+---+---+"
+
+def printboard():
+    for row in board:
+        print (s)
+        print ("\t" + vb + " " + row[0] + " " + vb + " " + row[1] + " " + vb + " " + row[2] + " " + vb)
+    print (s)
