@@ -1,0 +1,28 @@
+### shuen ###
+print("<<< Welcome to tic tac toe >>>")
+play1 = input ("Enter player 1 name: ")
+play2 = input ("Enter player 2 name: ")
+mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ") 
+# we can try to do the mode ltr on but like i just wanna put it here
+
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+vb = "|"
+s = "\t+---+---+---+"
+
+while not(mode == "1" or mode == "2"):
+    print ("### invalid input ###")
+    mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
+
+if mode == "1":
+    for row in board:
+        print (s)
+        print ("\t" + vb + " " + row[0] + " " + vb + " " + row[1] + " " + vb + " " + row[2] + " " + vb)
+    print (s)
+    print ("AI mode activated")
+elif mode == "2":
+    for row in board:
+        print (s)
+        print ("\t" + vb + " " + row[0] + " " + vb + " " + row[1] + " " + vb + " " + row[2] + " " + vb)
+    print (s)
+    print ("2 player mode activated")
+ 
