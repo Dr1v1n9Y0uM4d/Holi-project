@@ -58,30 +58,25 @@ for i in range(len(grid)):
     print(i)
     if A[i] == " ":
         counter = False
-        break
     elif B[i] == " ":
         counter = False
-        break
     elif C[i] == " ":
         counter = False
-        break
+    else:
+        counter = None # depend if gonna change True
 
 while counter == False:
     inpt = input("What would you like to put in(S or O): ")
-    locat = input("Where would you like to place your S/O (eg: B2): ")
-    if locat[0].isalpha() != True:
-        if locat[0] != "A":
-            if locat[0] != "B":
-                if locat[0] != "C":
-                    print("Input error")
-                    break
+    locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
+    if locat[0].isalpha() ==  False:
+        if not (locat[0] = "A" or locat[1] = "B" or locat[2] = "C"):
+            print("Input error")
     else: 
         print("Input error")
-        break
     
-    if locat[1].isdigit() != True: #checks - to be done later
-        return "Input error"
+    if locat[1].isdigit() == False: #checks - to be done later
+        print ("Input error")
     
     
-    ttt() #later when need to check board
+    ttt() 
     '''
