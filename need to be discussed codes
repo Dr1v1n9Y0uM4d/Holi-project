@@ -27,7 +27,7 @@ elif mode == "2":
     print ("2 player mode activated")
  
 # mad
-grid = grid = ["A","B","C"]
+grid = ["A","B","C"]
 
 board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 A = board[0] #row 1
@@ -42,9 +42,9 @@ def ttt():
     #print(s)
     count = 0
     for row in board:
-        print(row)
+        #print(row)
         print (hline)
-        print (grid[count] + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
+        print ("     " + grid[count] + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
         count += 1
     print (hline)
     
