@@ -42,13 +42,16 @@ elif mode == "2":
     ttt()
     print ("2 player mode activated")
 
-counter = None
 for i in range(len(grid)):
     if A[i] == " ":
         counter = False
     elif B[i] == " ":
         counter = False
     elif C[i] == " ":
+        counter = False
+    elif D[i] == " ":
+        counter = False
+    elif E[i] == " ":
         counter = False
     else:
         counter = True
@@ -61,25 +64,14 @@ while counter == False:
         inpt = input("What would you like to put in (S or O): ")
         inpt = inpt.upper()
 
-    locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
+    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
     locat = locat.upper()
-    while not (locat == None):
-        if locat[0].isalpha() == False or locat[1].isdigit() == False:
-            print ("### invalid input ###")
-            locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
-            locat = locat.upper()
-        elif not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C"):
-            print ("### invalid alphabet ###")
-            locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
-            locat = locat.upper()
-        elif not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3"):
-            print ("### invalid number ###")
-            locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
-            locat = locat.upper()
-        else:
-            print ("<<< next player >>>")
-            break
-    break
+    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+        print ("### invalid input ###")
+        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+        locat = locat.upper()
+
+    print ("<<< next player >>>")
 
 # mad
 grid = ["A","B","C"]
