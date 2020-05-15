@@ -76,8 +76,10 @@ while counter == False:
             print ("### invalid number ###")
             locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
             locat = locat.upper()
-
-    print ("something")
+        else:
+            print ("<<< next player >>>")
+            break
+    break
 
 # mad
 grid = ["A","B","C"]
