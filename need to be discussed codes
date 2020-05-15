@@ -41,10 +41,11 @@ hline = "\t+---+---+---+" #horizontal separators
 def ttt():
     #print(s)
     count = 0
+    print("          1   2   3")
     for row in board:
         #print(row)
         print (hline)
-        print ("     " + grid[count] + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
+        print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
         count += 1
     print (hline)
     
