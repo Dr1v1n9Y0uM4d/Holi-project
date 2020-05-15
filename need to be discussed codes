@@ -5,27 +5,44 @@ play2 = input ("Enter player 2 name: ")
 mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ") 
 # we can try to do the mode ltr on but like i just wanna put it here
 
+grid = ["A","B","C"]
+
 board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
-vb = "|"
-s = "\t+---+---+---+"
+A = board[0] 
+B = board[1] 
+C = board[2]
+
+sep = "|" 
+hline = "\t+---+---+---+" 
 
 while not(mode == "1" or mode == "2"):
     print ("### invalid input ###")
     mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
 
 if mode == "1":
-    for row in board:
-        print (s)
-        print ("\t" + vb + " " + row[0] + " " + vb + " " + row[1] + " " + vb + " " + row[2] + " " + vb)
-    print (s)
+    def ttt():
+        count = 0
+        print("          1   2   3")
+        for row in board:
+            print (hline)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
+            count += 1
+        print (hline)
+    ttt()
     print ("AI mode activated")
 elif mode == "2":
-    for row in board:
-        print (s)
-        print ("\t" + vb + " " + row[0] + " " + vb + " " + row[1] + " " + vb + " " + row[2] + " " + vb)
-    print (s)
+    def ttt():
+        count = 0
+        print("          1   2   3")
+        for row in board:
+            print (hline)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
+            count += 1
+        print (hline)
+    ttt()
     print ("2 player mode activated")
- 
+
+
 # mad
 grid = ["A","B","C"]
 
