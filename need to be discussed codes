@@ -107,7 +107,7 @@ while counter == False:
             C[3] = inpt
         else:
             C[4] = inpt
-            
+'''            
     elif locat[0] == "D":
         if locat[1] == '1':
             D[0] = inpt
@@ -131,7 +131,7 @@ while counter == False:
             E[3] = inpt
         else:
             E[4] = inpt
-
+'''
     ttt()#later when need to check board
     counter_check()
 
