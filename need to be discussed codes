@@ -27,7 +27,7 @@ elif mode == "2":
     print ("2 player mode activated")
  
 # mad
-grid = {"A": [" ", " ", " "], "B": [" ", " ", " "], "C": [" ", " ", " "]}
+grid = grid = ["A","B","C"]
 
 board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
 A = board[0] #row 1
