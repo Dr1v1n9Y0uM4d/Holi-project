@@ -26,3 +26,26 @@ elif mode == "2":
     print (s)
     print ("2 player mode activated")
  
+# mad
+grid = {"A": [" ", " ", " "], "B": [" ", " ", " "], "C": [" ", " ", " "]}
+
+board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+A = board[0] #row 1
+B = board[1] #row 2 
+C = board[2] #row 3
+
+sep = "|" #in-btw separators
+hline = "\t+---+---+---+" #horizontal separators
+#count = 0
+
+def ttt():
+    #print(s)
+    count = 0
+    for row in board:
+        print(row)
+        print (hline)
+        print (grid[count] + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
+        count += 1
+    print (hline)
+    
+ttt()
