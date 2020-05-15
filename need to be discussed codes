@@ -50,3 +50,38 @@ def ttt():
     print (hline)
     
 ttt()
+
+'''
+counter = None
+
+for i in range(len(grid)):
+    print(i)
+    if A[i] == " ":
+        counter = False
+        break
+    elif B[i] == " ":
+        counter = False
+        break
+    elif C[i] == " ":
+        counter = False
+        break
+
+while counter == False:
+    inpt = input("What would you like to put in(S or O): ")
+    locat = input("Where would you like to place your S/O (eg: B2): ")
+    if locat[0].isalpha() != True:
+        if locat[0] != "A":
+            if locat[0] != "B":
+                if locat[0] != "C":
+                    print("Input error")
+                    break
+    else: 
+        print("Input error")
+        break
+    
+    if locat[1].isdigit() != True: #checks - to be done later
+        return "Input error"
+    
+    
+    ttt() #later when need to check board
+    '''
