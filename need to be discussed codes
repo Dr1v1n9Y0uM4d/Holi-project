@@ -80,7 +80,7 @@ for i in range(len(grid)):
     elif C[i] == " ":
         counter = False
     else:
-        counter = None # depend if gonna change True
+        counter = True
 
 while counter == False:
     inpt = input("What would you like to put in(S or O): ")
