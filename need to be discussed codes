@@ -72,58 +72,28 @@ while counter == False:
         locat = locat.upper()
 
     print ("<<< next player >>>")
+    if locat[0] == "A":
+        if locat[1] == '1':
+            A[0] = inpt
+        elif locat[1] == '2':
+            A[1] = inpt
+        else: 
+            A[2] = inpt
+    elif locat[0] == "B":
+        if locat[1] == '1':
+            B[0] = inpt
+        elif locat[1] == '2':
+            B[1] = inpt
+        else: 
+            B[2] = inpt
+    elif locat[0] == "C":
+        if locat[1] == '1':
+            C[0] = inpt
+        elif locat[1] == '2':
+            C[1] = inpt
+        else: 
+            C[2] = inpt
+            
+    ttt()#later when need to check board
+    counter_check()
 
-# mad
-grid = ["A","B","C"]
-
-board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
-A = board[0] #row 1
-B = board[1] #row 2 
-C = board[2] #row 3
-
-sep = "|" #in-btw separators
-hline = "\t+---+---+---+" #horizontal separators
-#count = 0
-
-def ttt():
-    #print(s)
-    count = 0
-    print("          1   2   3")
-    for row in board:
-        #print(row)
-        print (hline)
-        print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep)
-        count += 1
-    print (hline)
-    
-ttt()
-
-'''
-counter = None
-
-for i in range(len(grid)):
-    print(i)
-    if A[i] == " ":
-        counter = False
-    elif B[i] == " ":
-        counter = False
-    elif C[i] == " ":
-        counter = False
-    else:
-        counter = True
-
-while counter == False:
-    inpt = input("What would you like to put in(S or O): ")
-    locat = input("Where would you like to place your S/O (eg: A1, B2, C3): ")
-    if locat[0].isalpha() ==  False:
-        if not (locat[0] = "A" or locat[1] = "B" or locat[2] = "C"):
-            print("Input error")
-    else: 
-        print("Input error")
-    
-    if locat[1].isdigit() == False: #checks - to be done later
-        print ("Input error")
-    
-    
-    ttt() 
-    '''
