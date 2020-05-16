@@ -86,6 +86,13 @@ while counter == False and plyer < 25:
         locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
         locat = locat.upper()
 
+    for alpha in range(5):
+        for i in range(len(board[alpha])):
+            while board[alpha][i] == "S" or board[alpha][i] == "O":
+                print ("### space taken ###")
+                locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                locat = locat.upper()                
+                
     if locat[0] == "A":
         if locat[1] == '1':
             A[0] = inpt
