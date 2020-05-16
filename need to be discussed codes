@@ -148,24 +148,35 @@ while counter == False and plyer < 25:
     ttt()
 
 '''
-    for alpha in range(5):
-    for i in range(len(board[alpha])):
-        if board[alpha][i] == "S" and board[alpha][(i + 1)] == "O" and board[alpha][(i + 2)] == "S":
-            print ("^^^ game end ^^^")
-            print ("[[[ winner is someone ]]]")
-            break
-        elif board[alpha][i] == "S" and board[(alpha + 1)][i] == "O" and board[(alpha + 2)][i] == "S":
-            print ("^^^ game end ^^^")
-            print ("[[[ winner is someone ]]]")
-            break
-        elif board[alpha][i] == "S" and board[(alpha + 1)][(i + 1)] == "O" and board[(alpha + 2)][(i + 2)] == "S":
-            print ("^^^ game end ^^^")
-            print ("[[[ winner is someone ]]]")
-            break
-        elif board[alpha][i] == "S" and board[(alpha + 1)][(i - 1)] == "O" and board[(alpha + 2)][(i - 2)] == "S":
-            print ("^^^ game end ^^^")
-            print ("[[[ winner is someone ]]]")
-            break
+
+    for alpha in range(3):
+        for i in range(3):
+            if board[alpha][i] == "S" and board[alpha][(i + 1)] == "O" and board[alpha][(i + 2)] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[alpha][i] == "S" and board[(alpha + 1)][i] == "O" and board[(alpha + 2)][i] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[alpha][i] == "S" and board[(alpha + 1)][(i + 1)] == "O" and board[(alpha + 2)][(i + 2)] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[alpha][i] == "S" and board[(alpha + 1)][(i - 1)] == "O" and board[(alpha + 2)][(i - 2)] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+
+            elif board[alpha][(i + 2)] == "S" and board[alpha][(i + 1)] == "O" and board[alpha][i] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[(alpha + 2)][i] == "S" and board[(alpha + 1)][i] == "O" and board[alpha][i] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[(alpha + 2)][(i + 2)] == "S" and board[(alpha + 1)][(i + 1)] == "O" and board[alpha][i] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+            elif board[(alpha + 2)][(i - 2)] == "S" and board[(alpha + 1)][(i - 1)] == "O" and board[alpha][i] == "S":
+                print ("^^^ game end ^^^")
+                print ("[[[ winner is someone ]]]")
+
 '''
     counter_check()
 
