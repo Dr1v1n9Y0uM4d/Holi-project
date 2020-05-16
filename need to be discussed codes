@@ -1,5 +1,5 @@
 ### shuen ###
-print("<<< Welcome to tic tac toe >>>")
+print("<<< welcome to SOS >>>")
 play1 = input ("Enter player 1 name: ")
 play2 = input ("Enter player 2 name: ")
 mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ") 
@@ -7,36 +7,46 @@ mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
 
 grid = ["A","B","C","D","E"]
 
-board = [[" ", " ", " ", " ", " "],[" ", " ", " ", " ", " "],[" ", " ", " ", " ", " "],[" ", " ", " ", " ", " "],[" ", " ", " ", " ", " "]]
+board = [[" ", " ", " ", " ", " "], [" ", " ", " ", " ", " "], [" ", " ", " ", " ", " "], [" ", " ", " ", " ", " "], [" ", " ", " ", " ", " "]]
+
 A = board[0] 
 B = board[1] 
-C = board[2] 
-D = board[3] 
-E = board[4] 
+C = board[2]
+D = board[3]
+E = board[4]
 
 
-sep = " | " 
+sep = "|" 
 hline = "\t+---+---+---+---+---+" 
 
 while not(mode == "1" or mode == "2"):
     print ("### invalid input ###")
     mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
 
-def ttt():
-    count = 0
-    print("          1   2   3   4   5")
-    for row in board:
-        print (hline)
-        print ("      " + grid[count] + sep + row[0] + sep + row[1] + sep + row[2] + sep + row[3] + sep + row[4] + sep)
-        count += 1
-    print (hline)
-
 if mode == "1":
+    def ttt():
+        count = 1
+        print("          1   2   3   4   5")
+        for row in board:
+            print (hline)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + "   " + row[3] + " " + sep + " " + row[4] + " " + sep)
+            count += 1
+        print (hline)
     ttt()
     print ("AI mode activated")
 elif mode == "2":
+    def ttt():
+        count = 0
+        print("          1   2   3   4   5")
+        for row in board:
+            print (hline)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + "   " + row[3] + " " + sep + " " + row[4] + " " + sep)
+            count += 1
+        print (hline)
     ttt()
     print ("2 player mode activated")
+
+counter = None
 
 for i in range(len(grid)):
     if A[i] == " ":
@@ -52,7 +62,16 @@ for i in range(len(grid)):
     else:
         counter = True
 
-while counter == False:
+plyer = 0
+
+while counter == False and plyer < 25:
+    if plyer % 2 == 0:
+        print ("<<< " + play1 + " >>>")
+        plyer += 1
+    else:
+        print ("<<< " + play2 + " >>>")
+        plyer += 1
+            
     inpt = input("What would you like to put in (S or O): ")
     inpt = inpt.upper()
     while not (inpt == "S" or inpt == "O"):
@@ -67,7 +86,6 @@ while counter == False:
         locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
         locat = locat.upper()
 
-    print ("<<< next player >>>")
     if locat[0] == "A":
         if locat[1] == '1':
             A[0] = inpt
@@ -103,7 +121,7 @@ while counter == False:
             C[3] = inpt
         else:
             C[4] = inpt
-'''            
+
     elif locat[0] == "D":
         if locat[1] == '1':
             D[0] = inpt
@@ -127,7 +145,27 @@ while counter == False:
             E[3] = inpt
         else:
             E[4] = inpt
+    ttt()
+
 '''
-    ttt()#later when need to check board
+    for alpha in range(5):
+    for i in range(len(board[alpha])):
+        if board[alpha][i] == "S" and board[alpha][(i + 1)] == "O" and board[alpha][(i + 2)] == "S":
+            print ("^^^ game end ^^^")
+            print ("[[[ winner is someone ]]]")
+            break
+        elif board[alpha][i] == "S" and board[(alpha + 1)][i] == "O" and board[(alpha + 2)][i] == "S":
+            print ("^^^ game end ^^^")
+            print ("[[[ winner is someone ]]]")
+            break
+        elif board[alpha][i] == "S" and board[(alpha + 1)][(i + 1)] == "O" and board[(alpha + 2)][(i + 2)] == "S":
+            print ("^^^ game end ^^^")
+            print ("[[[ winner is someone ]]]")
+            break
+        elif board[alpha][i] == "S" and board[(alpha + 1)][(i - 1)] == "O" and board[(alpha + 2)][(i - 2)] == "S":
+            print ("^^^ game end ^^^")
+            print ("[[[ winner is someone ]]]")
+            break
+'''
     counter_check()
 
