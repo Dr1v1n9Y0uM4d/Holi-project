@@ -29,7 +29,7 @@ if mode == "1":
         print("          1   2   3   4   5")
         for row in board:
             print (hline)
-            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + "   " + row[3] + " " + sep + " " + row[4] + " " + sep)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + " " + row[3] + " " + sep + " " + row[4] + " " + sep)
             count += 1
         print (hline)
     ttt()
@@ -40,7 +40,7 @@ elif mode == "2":
         print("          1   2   3   4   5")
         for row in board:
             print (hline)
-            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + "   " + row[3] + " " + sep + " " + row[4] + " " + sep)
+            print ("     " + grid[count] + "  " + sep + " " + row[0] + " " + sep + " " + row[1] + " " + sep + " " + row[2] + " " + sep + " " + row[3] + " " + sep + " " + row[4] + " " + sep)
             count += 1
         print (hline)
     ttt()
