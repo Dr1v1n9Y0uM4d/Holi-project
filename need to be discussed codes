@@ -17,7 +17,7 @@ if info == "0":
     print ("The Ai mode and the 2 player mode.")
     print ("The AI mode only requires one player and 2 player mode requires 2 players.")
     print ("Each player will take turns to fill the grid with either S or O.")
-    print ("The player that forms the word SOS will win the game.")
+    print ("The player that forms the word SOS first will win the game.")
     print ("<<< GOOD LUCK >>>")
     
 elif info == "1":
