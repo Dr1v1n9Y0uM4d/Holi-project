@@ -18,27 +18,27 @@ def ai():
             E[i+1] = "O"
             break
         
-        elif A[i+1] = "O" and A[i+2] == "S" and A[i] == " ":
-            A[i] == "S"
-        elif B[i+1] = "O" and B[i+2] == "S" and B[i] == " ":
-            B[i] == "S"
-        elif C[i+1] = "O" and C[i+2] == "S" and C[i] == " ":
-            C[i] == "S"
-        elif D[i+1] = "O" and D[i+2] == "S" and D[i] == " ":
-            D[i] == "S"
-        elif E[i+1] = "O" and E[i+2] == "S" and E[i] == " ":
-            E[i] == "S"
+        elif A[i+1] == "O" and A[i+2] == "S" and A[i] == " ":
+            A[i] = "S"
+        elif B[i+1] == "O" and B[i+2] == "S" and B[i] == " ":
+            B[i] = "S"
+        elif C[i+1] == "O" and C[i+2] == "S" and C[i] == " ":
+            C[i] = "S"
+        elif D[i+1] == "O" and D[i+2] == "S" and D[i] == " ":
+            D[i] = "S"
+        elif E[i+1] == "O" and E[i+2] == "S" and E[i] == " ":
+            E[i] = "S"
         
-        elif A[i+1] = "O" and A[i] == "S" and A[i+2] == " ":
-            A[i+2] == "S"
-        elif B[i+1] = "O" and B[i] == "S" and B[i+2] == " ":
-            B[i+2] == "S"
-        elif C[i+1] = "O" and C[i] == "S" and C[i+2] == " ":
-            C[i+2] == "S"
-        elif D[i+1] = "O" and D[i] == "S" and D[i+2] == " ":
-            D[i+2] == "S"
-        elif E[i+1] = "O" and E[i] == "S" and E[i+2] == " ":
-            E[i+2] == "S"
+        elif A[i+1] == "O" and A[i] == "S" and A[i+2] == " ":
+            A[i+2] = "S"
+        elif B[i+1] == "O" and B[i] == "S" and B[i+2] == " ":
+            B[i+2] = "S"
+        elif C[i+1] == "O" and C[i] == "S" and C[i+2] == " ":
+            C[i+2] = "S"
+        elif D[i+1] == "O" and D[i] == "S" and D[i+2] == " ":
+            D[i+2] = "S"
+        elif E[i+1] == "O" and E[i] == "S" and E[i+2] == " ":
+            E[i+2] = "S"
         
         #diag \
         elif A[i] == 'S' and C[i+2] == 'S' and B[i+1] == ' ':
