@@ -1,5 +1,5 @@
-### shuen ###
 import sys
+import random
 
 print("<<< welcome to SOS >>>")
 
