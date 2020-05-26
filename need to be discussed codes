@@ -93,6 +93,10 @@ counter_check()
 
 plyer = 0
 
+def playermode ():
+
+# here onwards
+
 while counter == False:
     if mode == "2": 
         if plyer % 2 == 0:
