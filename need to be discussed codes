@@ -348,7 +348,8 @@ def ai():
                                         continue
         
             ttt()
-            
+
+counter = False
 def counter_check():
     counter = False
     for i in range(len(grid)):
