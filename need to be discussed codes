@@ -205,17 +205,6 @@ def ai():
                 else:
                     continue
 
-
-if mode == "1":
-    ttt()
-    print ("AI mode activated")
-    print (" ")
-    # ai()
-elif mode == "2":
-    ttt()
-    print ("2 player mode activated")
-    print (" ")
-
 counter = False
 
 def counter_check():
@@ -545,4 +534,13 @@ def playermode ():
     print ("^^^ game end ^^^ \n [[[ no winner ]]]")
     sys.exit()
 
-playermode()
+if mode == "1":
+    ttt()
+    print ("AI mode activated")
+    print (" ")
+    ai()
+elif mode == "2":
+    ttt()
+    print ("2 player mode activated")
+    print (" ")
+    playermode()
