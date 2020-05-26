@@ -93,6 +93,112 @@ counter_check()
 
 plyer = 0
 
+def spot_check():
+    x = None
+    locat = ""
+    for i in range(5):
+        x = int(locat[1])
+        if locat[0] == "A":
+            if x == (1*i)+1:
+                if A[i] == " ":
+                    A[i] = inpt
+                else:
+                    print("### spot is already filled ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
+                    while not (inpt == "S" or inpt == "O"):
+                        print ("### invalid input ###")
+                        inpt = input("What would you like to put in (S or O): ")
+                        inpt = inpt.upper()
+
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                        print ("### invalid input ###")
+                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                        locat = locat.upper()
+                    continue
+        elif locat[0] == "B":
+            if x == (1*i)+1:
+                if B[i] == " ":
+                    B[i] = inpt
+                else:
+                    print("### spot is already filled ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
+                    while not (inpt == "S" or inpt == "O"):
+                        print ("### invalid input ###")
+                        inpt = input("What would you like to put in (S or O): ")
+                        inpt = inpt.upper()
+
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                        print ("### invalid input ###")
+                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                        locat = locat.upper()
+                    continue
+        elif locat[0] == "C":
+            if x == (1*i)+1:
+                if C[i] == " ":
+                    C[i] = inpt
+                else:
+                    print("### spot is already filled ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
+                    while not (inpt == "S" or inpt == "O"):
+                        print ("### invalid input ###")
+                        inpt = input("What would you like to put in (S or O): ")
+                        inpt = inpt.upper()
+
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                        print ("### invalid input ###")
+                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                        locat = locat.upper()
+                    continue
+        elif locat[0] == "D":
+            if x == (1*i)+1:
+                if D[i] == " ":
+                    D[i] = inpt
+                else:
+                    print("### spot is already filled ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
+                    while not (inpt == "S" or inpt == "O"):
+                        print ("### invalid input ###")
+                        inpt = input("What would you like to put in (S or O): ")
+                        inpt = inpt.upper()
+
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                        print ("### invalid input ###")
+                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                        locat = locat.upper()
+                    continue
+        elif locat[0] == "E":
+            if x == (1*i)+1:
+                if E[i] == " ":
+                    E[i] = inpt
+                else:
+                    print("### spot is already filled ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
+                    while not (inpt == "S" or inpt == "O"):
+                        print ("### invalid input ###")
+                        inpt = input("What would you like to put in (S or O): ")
+                        inpt = inpt.upper()
+
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                        print ("### invalid input ###")
+                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                        locat = locat.upper()
+                    continue
+
 def playermode ():
     while counter == False:
         if mode == "2": 
@@ -109,126 +215,39 @@ def playermode ():
             else:
                 print ("<<< \" AI\'s turn \" >>>")
                 plyer += 1
+        if mode == "1":
+            if plyernum % 2 == 0:
+                inpt = input("What would you like to put in (S or O): ")
+                inpt = inpt.upper()
+                while not (inpt == "S" or inpt == "O"):
+                    print ("### invalid input ###")
+                    inpt = input("What would you like to put in (S or O): ")
+                    inpt = inpt.upper()
 
-        inpt = input("What would you like to put in (S or O): ")
-        inpt = inpt.upper()
-        while not (inpt == "S" or inpt == "O"):
-            print ("### invalid input ###")
+                locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                locat = locat.upper()
+                plyernum += 1
+                while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                    print ("### invalid input ###")
+                    locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                    locat = locat.upper()
+                spot_check()
+        else:
             inpt = input("What would you like to put in (S or O): ")
             inpt = inpt.upper()
+            while not (inpt == "S" or inpt == "O"):
+                print ("### invalid input ###")
+                inpt = input("What would you like to put in (S or O): ")
+                inpt = inpt.upper()
 
-        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-        locat = locat.upper()
-        plyernum += 1
-        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-            print ("### invalid input ###")
             locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
             locat = locat.upper()
-
-        x = None
-        for i in range(5):
-            x = int(locat[1])
-            if locat[0] == "A":
-                if x == (1*i)+1:
-                    if A[i] == " ":
-                        A[i] = inpt
-                    else:
-                        print("### spot is already filled ###")
-                        inpt = input("What would you like to put in (S or O): ")
-                        inpt = inpt.upper()
-                        while not (inpt == "S" or inpt == "O"):
-                            print ("### invalid input ###")
-                            inpt = input("What would you like to put in (S or O): ")
-                            inpt = inpt.upper()
-
-                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                        locat = locat.upper()
-                        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                            print ("### invalid input ###")
-                            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                            locat = locat.upper()
-                        continue
-            elif locat[0] == "B":
-                if x == (1*i)+1:
-                    if B[i] == " ":
-                        B[i] = inpt
-                    else:
-                        print("### spot is already filled ###")
-                        inpt = input("What would you like to put in (S or O): ")
-                        inpt = inpt.upper()
-                        while not (inpt == "S" or inpt == "O"):
-                            print ("### invalid input ###")
-                            inpt = input("What would you like to put in (S or O): ")
-                            inpt = inpt.upper()
-
-                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                        locat = locat.upper()
-                        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                            print ("### invalid input ###")
-                            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                            locat = locat.upper()
-                        continue
-            elif locat[0] == "C":
-                if x == (1*i)+1:
-                    if C[i] == " ":
-                        C[i] = inpt
-                    else:
-                        print("### spot is already filled ###")
-                        inpt = input("What would you like to put in (S or O): ")
-                        inpt = inpt.upper()
-                        while not (inpt == "S" or inpt == "O"):
-                            print ("### invalid input ###")
-                            inpt = input("What would you like to put in (S or O): ")
-                            inpt = inpt.upper()
-
-                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                        locat = locat.upper()
-                        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                            print ("### invalid input ###")
-                            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                            locat = locat.upper()
-                        continue
-            elif locat[0] == "D":
-                if x == (1*i)+1:
-                    if D[i] == " ":
-                        D[i] = inpt
-                    else:
-                        print("### spot is already filled ###")
-                        inpt = input("What would you like to put in (S or O): ")
-                        inpt = inpt.upper()
-                        while not (inpt == "S" or inpt == "O"):
-                            print ("### invalid input ###")
-                            inpt = input("What would you like to put in (S or O): ")
-                            inpt = inpt.upper()
-
-                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                        locat = locat.upper()
-                        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                            print ("### invalid input ###")
-                            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                            locat = locat.upper()
-                        continue
-            elif locat[0] == "E":
-                if x == (1*i)+1:
-                    if E[i] == " ":
-                        E[i] = inpt
-                    else:
-                        print("### spot is already filled ###")
-                        inpt = input("What would you like to put in (S or O): ")
-                        inpt = inpt.upper()
-                        while not (inpt == "S" or inpt == "O"):
-                            print ("### invalid input ###")
-                            inpt = input("What would you like to put in (S or O): ")
-                            inpt = inpt.upper()
-
-                        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                        locat = locat.upper()
-                        while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                            print ("### invalid input ###")
-                            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                            locat = locat.upper()
-                        continue
-                        
+            plyernum += 1
+            while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+                print ("### invalid input ###")
+                locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+                locat = locat.upper()
+            spot_check()
         counter_check()
         print (" ")            
         ttt()
