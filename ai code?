@@ -110,4 +110,33 @@ def ai():
                 D[i] = 'S'
             elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
                 E[i] == 'S'
-
+                
+    randalpha = random.choice(grid)
+    randnum = random.randint(0,4)
+    so = ['S','O']
+    while y == None:
+        if randalpha == "A":
+            if A[randnum] == " ":
+                A[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "B":
+            if B[randnum] == " ":
+                B[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "C":
+            if C[randnum] == " ":
+                C[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "D":
+            if D[randnum] == " ":
+                D[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "E":
+            if E[randnum] == " ":
+                E[randnum] = random.choice(so)
+            else:
+                continue
