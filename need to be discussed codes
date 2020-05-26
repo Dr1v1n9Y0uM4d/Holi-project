@@ -128,35 +128,35 @@ while counter == False:
                 if A[i] == " ":
                     A[i] = inpt
                 else:
-                    print("Spot is already filled")
+                    print("### spot is already filled ###")
                     continue
         elif locat[0] == "B":
             if x == (1*i)+1:
                 if B[i] == " ":
                     B[i] = inpt
                 else:
-                    print("Spot is already filled")
+                    print("### spot is already filled ###")
                     continue
         elif locat[0] == "C":
             if x == (1*i)+1:
                 if C[i] == " ":
                     C[i] = inpt
                 else:
-                    print("Spot is already filled")
+                    print("### spot is already filled ###")
                     continue
         elif locat[0] == "D":
             if x == (1*i)+1:
                 if D[i] == " ":
                     D[i] = inpt
                 else:
-                    print("Spot is already filled")
+                    print("### spot is already filled ###")
                     continue
         elif locat[0] == "E":
             if x == (1*i)+1:
                 if E[i] == " ":
                     E[i] = inpt
                 else:
-                    print("Spot is already filled")
+                    print("### spot is already filled ###")
                     continue
 
     counter_check()
