@@ -114,9 +114,9 @@ def ai():
     randalpha = random.choice(grid)
     randnum = random.randint(0,4)
     so = ['S','O']
+    plyernum += 1
     while y == None:
         if plyernum % 2 != 0:
-            plyernum += 1
             if randalpha == "A":
                 if A[randnum] == " ":
                     A[randnum] = random.choice(so)
