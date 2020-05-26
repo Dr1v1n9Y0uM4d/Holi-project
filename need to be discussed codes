@@ -238,8 +238,6 @@ def playermode ():
         print (" ")            
         ttt()
     
-#put in ai code here? aft checks of course
-    
         if A[0] == "S" and A[1] == "O" and A[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
             sys.exit()
