@@ -60,7 +60,151 @@ while not(mode == "1" or mode == "2"):
     mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
 
 plyernum = 0
-#to put in the ai code
+def ai():
+    y = None
+    for i in range(3):
+        #hori
+        if A[i] == "S" and A[i+2] == "S" and A[i+1] == " ":
+            A[i+1] = "O"
+            break
+        elif B[i] == "S" and B[i+2] == "S" and B[i+1] == " ":
+            B[i+1] = "O"
+            break
+        elif C[i] == "S" and C[i+2] == "S" and C[i+1] == " ":
+            C[i+1] = "O"
+            break
+        elif D[i] == "S" and D[i+2] == "S" and D[i+1] == " ":
+            D[i+1] = "O"
+            break
+        elif E[i] == "S" and E[i+2] == "S" and E[i+1] == " ":
+            E[i+1] = "O"
+            break
+        
+        elif A[i+1] == "O" and A[i+2] == "S" and A[i] == " ":
+            A[i] = "S"
+        elif B[i+1] == "O" and B[i+2] == "S" and B[i] == " ":
+            B[i] = "S"
+        elif C[i+1] == "O" and C[i+2] == "S" and C[i] == " ":
+            C[i] = "S"
+        elif D[i+1] == "O" and D[i+2] == "S" and D[i] == " ":
+            D[i] = "S"
+        elif E[i+1] == "O" and E[i+2] == "S" and E[i] == " ":
+            E[i] = "S"
+        
+        elif A[i+1] == "O" and A[i] == "S" and A[i+2] == " ":
+            A[i+2] = "S"
+        elif B[i+1] == "O" and B[i] == "S" and B[i+2] == " ":
+            B[i+2] = "S"
+        elif C[i+1] == "O" and C[i] == "S" and C[i+2] == " ":
+            C[i+2] = "S"
+        elif D[i+1] == "O" and D[i] == "S" and D[i+2] == " ":
+            D[i+2] = "S"
+        elif E[i+1] == "O" and E[i] == "S" and E[i+2] == " ":
+            E[i+2] = "S"
+        
+        #diag \
+        elif A[i] == 'S' and C[i+2] == 'S' and B[i+1] == ' ':
+            B[i+1] = 'O'
+        elif B[i] == 'S' and D[i+2] == 'S' and C[i+1] == ' ':
+            C[i+1] = 'O'
+        elif C[i] == 'S' and E[i+2] == 'S' and D[i+1] == ' ':
+            D[i+1] = 'O'
+        
+        elif B[i+1] == 'O' and C[i+2] == 'S' and A[i] == ' ':
+            A[i] = 'S'
+        elif C[i+1] == 'O' and D[i+2] == 'S' and B[i] == ' ':
+            B[i] = 'S'
+        elif C[i+1] == 'O' and C[i+2] == 'S' and C[i] == ' ':
+            C[i] = 'S'
+        
+        elif A[i] == 'S' and B[i+1] == 'O' and C[i+2] == ' ':
+            C[i+2] = 'S'
+        elif B[i] == 'S' and C[i+1] == 'O' and D[i+2] == ' ':
+            D[i+2] = 'S'
+        elif E[i] == 'S' and D[i+1] == 'O' and C[i+2] == ' ':
+            C[i+2] = 'S'
+        
+        #diag /
+        elif A[4-i] == 'S' and C[2-i] == 'S' and B[3-i] == ' ':
+            B[4-i] = 'O'
+        elif B[4-i] == 'S' and D[2-i] == 'S' and C[3-i] == ' ':
+            C[3-i] = 'O'
+        elif C[4-i] == 'S' and E[2-i] == 'S' and D[3-i] == ' ':
+            D[3-i] = 'O'
+        
+        elif B[3-i] == 'O' and C[2-i] == 'S' and A[4-i] == ' ':
+            A[4-i] = 'S'
+        elif C[3-i] == 'O' and D[2-i] == 'S' and B[4-i] == ' ':
+            B[4-i] = 'S'
+        elif D[3-i] == 'O' and E[2-i] == 'S' and C[4-i] == ' ':
+            C[4-i] = 'S'
+        
+        elif A[4-i] == 'S' and B[3-i] == 'O' and C[2-i] == ' ':
+            C[2-i] = 'S'
+        elif B[4-i] == 'S' and C[3-i] == 'O' and D[2-i] == ' ':
+            D[2-i] = 'S'
+        elif C[4-i] == 'S' and D[3-i] == 'O' and E[2-i] == ' ':
+            E[2-i] = 'S'
+            
+        else:
+            y = True
+
+    if y == True:
+        for i in range(5):
+            #vert
+            if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
+                B[i] = 'O'
+            elif B[i] == 'S' and D[i] == 'S' and C[i] == ' ':
+                C[i] = 'O'
+            elif C[i] == 'S' and E[i] == 'S' and D[i] == ' ':
+                D[i] == 'O'
+            
+            elif B[i] == 'O' and C[i] == 'S' and A[i] == ' ':
+                A[i] = 'S'
+            elif C[i] == 'O' and D[i] == 'S' and B[i] == ' ':
+                B[i] = 'S'
+            elif D[i] == 'O' and E[i] == 'S' and C[i] == ' ':
+                C[i] = 'S'
+            
+            elif A[i] == 'S' and B[i] == 'O' and C[i] == ' ':
+                C[i] = 'S'
+            elif B[i] == 'S' and C[i] == 'O' and D[i] == ' ':
+                D[i] = 'S'
+            elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
+                E[i] == 'S'
+                
+    randalpha = random.choice(grid)
+    randnum = random.randint(0,4)
+    so = ['S','O']
+    plyernum += 1
+    while y == None:
+        if plyernum % 2 != 0:
+            if randalpha == "A":
+                if A[randnum] == " ":
+                    A[randnum] = random.choice(so)
+                else:
+                    continue
+            elif randalpha == "B":
+                if B[randnum] == " ":
+                    B[randnum] = random.choice(so)
+                else:
+                    continue
+            elif randalpha == "C":
+                if C[randnum] == " ":
+                    C[randnum] = random.choice(so)
+                else:
+                    continue
+            elif randalpha == "D":
+                if D[randnum] == " ":
+                    D[randnum] = random.choice(so)
+                else:
+                    continue
+            elif randalpha == "E":
+                if E[randnum] == " ":
+                    E[randnum] = random.choice(so)
+                else:
+                    continue
+
 
 if mode == "1":
     ttt()
