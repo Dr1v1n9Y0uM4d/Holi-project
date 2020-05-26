@@ -345,8 +345,8 @@ def ai():
                                         E[randnum] = random.choice(so)
                                     else:
                                         continue
-
-            ttt()
+        
+        ttt()
             
 counter = False
 
