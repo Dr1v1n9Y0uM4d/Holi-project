@@ -63,6 +63,7 @@ if mode == "1":
     ttt()
     print ("AI mode activated")
     print (" ")
+    # ai()
 elif mode == "2":
     ttt()
     print ("2 player mode activated")
