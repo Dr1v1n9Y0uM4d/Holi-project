@@ -1,147 +1,377 @@
 def ai():
-    y = None
-    for i in range(3):
-        #hori
-        if A[i] == "S" and A[i+2] == "S" and A[i+1] == " ":
-            A[i+1] = "O"
-            break
-        elif B[i] == "S" and B[i+2] == "S" and B[i+1] == " ":
-            B[i+1] = "O"
-            break
-        elif C[i] == "S" and C[i+2] == "S" and C[i+1] == " ":
-            C[i+1] = "O"
-            break
-        elif D[i] == "S" and D[i+2] == "S" and D[i+1] == " ":
-            D[i+1] = "O"
-            break
-        elif E[i] == "S" and E[i+2] == "S" and E[i+1] == " ":
-            E[i+1] = "O"
-            break
-        
-        elif A[i+1] == "O" and A[i+2] == "S" and A[i] == " ":
-            A[i] = "S"
-        elif B[i+1] == "O" and B[i+2] == "S" and B[i] == " ":
-            B[i] = "S"
-        elif C[i+1] == "O" and C[i+2] == "S" and C[i] == " ":
-            C[i] = "S"
-        elif D[i+1] == "O" and D[i+2] == "S" and D[i] == " ":
-            D[i] = "S"
-        elif E[i+1] == "O" and E[i+2] == "S" and E[i] == " ":
-            E[i] = "S"
-        
-        elif A[i+1] == "O" and A[i] == "S" and A[i+2] == " ":
-            A[i+2] = "S"
-        elif B[i+1] == "O" and B[i] == "S" and B[i+2] == " ":
-            B[i+2] = "S"
-        elif C[i+1] == "O" and C[i] == "S" and C[i+2] == " ":
-            C[i+2] = "S"
-        elif D[i+1] == "O" and D[i] == "S" and D[i+2] == " ":
-            D[i+2] = "S"
-        elif E[i+1] == "O" and E[i] == "S" and E[i+2] == " ":
-            E[i+2] = "S"
-        
-        #diag \
-        elif A[i] == 'S' and C[i+2] == 'S' and B[i+1] == ' ':
-            B[i+1] = 'O'
-        elif B[i] == 'S' and D[i+2] == 'S' and C[i+1] == ' ':
-            C[i+1] = 'O'
-        elif C[i] == 'S' and E[i+2] == 'S' and D[i+1] == ' ':
-            D[i+1] = 'O'
-        
-        elif B[i+1] == 'O' and C[i+2] == 'S' and A[i] == ' ':
-            A[i] = 'S'
-        elif C[i+1] == 'O' and D[i+2] == 'S' and B[i] == ' ':
-            B[i] = 'S'
-        elif C[i+1] == 'O' and C[i+2] == 'S' and C[i] == ' ':
-            C[i] = 'S'
-        
-        elif A[i] == 'S' and B[i+1] == 'O' and C[i+2] == ' ':
-            C[i+2] = 'S'
-        elif B[i] == 'S' and C[i+1] == 'O' and D[i+2] == ' ':
-            D[i+2] = 'S'
-        elif E[i] == 'S' and D[i+1] == 'O' and C[i+2] == ' ':
-            C[i+2] = 'S'
-        
-        #diag /
-        elif A[4-i] == 'S' and C[2-i] == 'S' and B[3-i] == ' ':
-            B[4-i] = 'O'
-        elif B[4-i] == 'S' and D[2-i] == 'S' and C[3-i] == ' ':
-            C[3-i] = 'O'
-        elif C[4-i] == 'S' and E[2-i] == 'S' and D[3-i] == ' ':
-            D[3-i] = 'O'
-        
-        elif B[3-i] == 'O' and C[2-i] == 'S' and A[4-i] == ' ':
-            A[4-i] = 'S'
-        elif C[3-i] == 'O' and D[2-i] == 'S' and B[4-i] == ' ':
-            B[4-i] = 'S'
-        elif D[3-i] == 'O' and E[2-i] == 'S' and C[4-i] == ' ':
-            C[4-i] = 'S'
-        
-        elif A[4-i] == 'S' and B[3-i] == 'O' and C[2-i] == ' ':
-            C[2-i] = 'S'
-        elif B[4-i] == 'S' and C[3-i] == 'O' and D[2-i] == ' ':
-            D[2-i] = 'S'
-        elif C[4-i] == 'S' and D[3-i] == 'O' and E[2-i] == ' ':
-            E[2-i] = 'S'
-            
-        else:
-            y = True
+    #hori
+    if A[0] == "S" and A[2] == "S" and A[1] == " ":
+        A[1] = "O"
+    elif A[1] == "S" and A[3] == "S" and A[2] == " ":
+        A[2] = "O"
+    elif A[2] == "S" and A[4] == "S" and A[3] == " ":
+        A[3] = "O"
 
-    if y == True:
-        for i in range(5):
-            #vert
-            if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
-                B[i] = 'O'
-            elif B[i] == 'S' and D[i] == 'S' and C[i] == ' ':
-                C[i] = 'O'
-            elif C[i] == 'S' and E[i] == 'S' and D[i] == ' ':
-                D[i] == 'O'
-            
-            elif B[i] == 'O' and C[i] == 'S' and A[i] == ' ':
-                A[i] = 'S'
-            elif C[i] == 'O' and D[i] == 'S' and B[i] == ' ':
-                B[i] = 'S'
-            elif D[i] == 'O' and E[i] == 'S' and C[i] == ' ':
-                C[i] = 'S'
-            
-            elif A[i] == 'S' and B[i] == 'O' and C[i] == ' ':
-                C[i] = 'S'
-            elif B[i] == 'S' and C[i] == 'O' and D[i] == ' ':
-                D[i] = 'S'
-            elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
-                E[i] == 'S'
-                
-            else:
-                y = None
-                
+    elif B[0] == "S" and B[2] == "S" and B[1] == " ":
+        B[1] = "O"
+    elif B[1] == "S" and B[3] == "S" and B[2] == " ":
+        B[2] = "O"
+    elif B[2] == "S" and B[4] == "S" and B[3] == " ":
+        B[3] = "O"
+    elif B[0] == "S" and B[2] == "S" and B[1] == " ":
+        B[1] = "O"
+    elif B[1] == "S" and B[3] == "S" and B[2] == " ":
+        B[2] = "O"
+    elif B[2] == "S" and B[4] == "S" and B[3] == " ":
+        B[3] = "O"
+
+    elif C[0] == "S" and C[2] == "S" and C[1] == " ":
+        C[1] = "O"
+    elif C[1] == "S" and C[3] == "S" and C[2] == " ":
+        C[2] = "O"
+    elif C[2] == "S" and C[4] == "S" and C[3] == " ":
+        C[3] = "O"
+
+    elif D[0] == "S" and D[2] == "S" and D[1] == " ":
+        D[1] = "O"
+    elif D[1] == "S" and D[3] == "S" and D[2] == " ":
+        D[2] = "O"
+    elif D[2] == "S" and D[4] == "S" and D[3] == " ":
+        D[3] = "O"
+
+    elif E[0] == "S" and E[2] == "S" and E[1] == " ":
+        E[1] = "O"
+    elif E[1] == "S" and E[3] == "S" and E[2] == " ":
+        E[2] = "O"
+    elif E[2] == "S" and E[4] == "S" and E[3] == " ":
+        E[3] = "O"
+
+    elif A[1] == "O" and A[2] == "S" and A[0] == " ":
+        A[0] = "S"
+    elif A[2] == "O" and A[3] == "S" and A[1] == " ":
+        A[1] = "S"
+    elif A[3] == "O" and A[4] == "S" and A[2] == " ":
+        A[2] = "S"
+
+    elif B[1] == "O" and B[2] == "S" and B[0] == " ":
+        B[0] = "S"
+    elif B[2] == "O" and B[3] == "S" and B[1] == " ":
+        B[1] = "S"
+    elif B[3] == "O" and B[4] == "S" and B[2] == " ":
+        B[2] = "S"
+
+    elif C[1] == "O" and C[2] == "S" and C[0] == " ":
+        C[0] = "S"
+    elif C[2] == "O" and C[3] == "S" and C[1] == " ":
+        C[1] = "S"
+    elif C[3] == "O" and C[4] == "S" and C[2] == " ":
+        C[2] = "S"
+
+    elif D[1] == "O" and D[2] == "S" and D[0] == " ":
+        D[0] = "S"
+    elif D[2] == "O" and D[3] == "S" and D[1] == " ":
+        D[1] = "S"
+    elif D[3] == "O" and D[4] == "S" and D[2] == " ":
+        D[2] = "S"
+
+    elif E[1] == "O" and E[2] == "S" and E[0] == " ":
+        E[0] = "S"
+    elif E[2] == "O" and E[3] == "S" and E[1] == " ":
+        E[1] = "S"
+    elif E[3] == "O" and E[4] == "S" and E[2] == " ":
+        E[2] = "S"
+
+    elif A[1] == "O" and A[0] == "S" and A[2] == " ":
+        A[2] = "S"
+    elif A[2] == "O" and A[1] == "S" and A[3] == " ":
+        A[3] = "S"
+    elif A[3] == "O" and A[2] == "S" and A[4] == " ":
+        A[4] = "S"
+
+    elif B[1] == "O" and B[0] == "S" and B[2] == " ":
+        B[2] = "S"
+    elif B[2] == "O" and B[1] == "S" and B[3] == " ":
+        B[3] = "S"
+    elif B[3] == "O" and B[2] == "S" and B[4] == " ":
+        B[4] = "S"
+
+    elif C[1] == "O" and C[0] == "S" and C[2] == " ":
+        C[2] = "S"
+    elif C[2] == "O" and C[1] == "S" and C[3] == " ":
+        C[3] = "S"
+    elif C[3] == "O" and C[2] == "S" and C[4] == " ":
+        C[4] = "S"
+
+    elif D[1] == "O" and D[0] == "S" and D[2] == " ":
+        D[2] = "S"
+    elif D[2] == "O" and D[1] == "S" and D[3] == " ":
+        D[3] = "S"
+    elif D[3] == "O" and D[2] == "S" and D[4] == " ":
+        D[4] = "S"
+
+    elif E[1] == "O" and E[0] == "S" and E[2] == " ":
+        E[2] = "S"
+    elif E[2] == "O" and E[1] == "S" and E[3] == " ":
+        E[3] = "S"
+    elif E[3] == "O" and E[2] == "S" and E[4] == " ":
+        E[4] = "S"
+
+    #vert
+    elif A[0] == 'S' and C[0] == 'S' and B[0] == ' ':
+        B[0] = 'O'
+    elif B[0] == 'S' and D[0] == 'S' and C[0] == ' ':
+        C[0] = 'O'
+    elif C[0] == 'S' and E[0] == 'S' and D[0] == ' ':
+        D[0] == 'O'
+
+    elif B[0] == 'O' and C[0] == 'S' and A[0] == ' ':
+        A[0] = 'S'
+    elif C[0] == 'O' and D[0] == 'S' and B[0] == ' ':
+        B[0] = 'S'
+    elif D[0] == 'O' and E[0] == 'S' and C[0] == ' ':
+        C[0] = 'S'
+
+    elif A[0] == 'S' and B[0] == 'O' and C[0] == ' ':
+        C[0] = 'S'
+    elif B[0] == 'S' and C[0] == 'O' and D[0] == ' ':
+        D[0] = 'S'
+    elif C[0] == 'S' and D[0] == 'O' and E[0] == ' ':
+        E[0] == 'S'
+
+    elif A[1] == 'S' and C[1] == 'S' and B[1] == ' ':
+        B[1] = 'O'
+    elif B[1] == 'S' and D[1] == 'S' and C[1] == ' ':
+        C[1] = 'O'
+    elif C[1] == 'S' and E[1] == 'S' and D[1] == ' ':
+        D[1] == 'O'
+
+    elif B[1] == 'O' and C[1] == 'S' and A[1] == ' ':
+        A[1] = 'S'
+    elif C[1] == 'O' and D[1] == 'S' and B[1] == ' ':
+        B[1] = 'S'
+    elif D[1] == 'O' and E[1] == 'S' and C[1] == ' ':
+        C[1] = 'S'
+
+    elif A[1] == 'S' and B[1] == 'O' and C[1] == ' ':
+        C[1] = 'S'
+    elif B[1] == 'S' and C[1] == 'O' and D[1] == ' ':
+        D[1] = 'S'
+    elif C[1] == 'S' and D[1] == 'O' and E[1] == ' ':
+        E[1] == 'S'
+
+    elif A[2] == 'S' and C[2] == 'S' and B[2] == ' ':
+        B[2] = 'O'
+    elif B[2] == 'S' and D[2] == 'S' and C[2] == ' ':
+        C[2] = 'O'
+    elif C[2] == 'S' and E[2] == 'S' and D[2] == ' ':
+        D[2] == 'O'
+
+    elif B[2] == 'O' and C[2] == 'S' and A[2] == ' ':
+        A[2] = 'S'
+    elif C[2] == 'O' and D[2] == 'S' and B[2] == ' ':
+        B[2] = 'S'
+    elif D[2] == 'O' and E[2] == 'S' and C[2] == ' ':
+        C[2] = 'S'
+
+    elif A[2] == 'S' and B[2] == 'O' and C[2] == ' ':
+        C[2] = 'S'
+    elif B[2] == 'S' and C[2] == 'O' and D[2] == ' ':
+        D[2] = 'S'
+    elif C[2] == 'S' and D[2] == 'O' and E[2] == ' ':
+        E[2] == 'S'
+
+    elif A[3] == 'S' and C[3] == 'S' and B[3] == ' ':
+        B[3] = 'O'
+    elif B[3] == 'S' and D[3] == 'S' and C[3] == ' ':
+        C[3] = 'O'
+    elif C[3] == 'S' and E[3] == 'S' and D[3] == ' ':
+        D[3] == 'O'
+
+    elif B[3] == 'O' and C[3] == 'S' and A[3] == ' ':
+        A[3] = 'S'
+    elif C[3] == 'O' and D[3] == 'S' and B[3] == ' ':
+        B[3] = 'S'
+    elif D[3] == 'O' and E[3] == 'S' and C[3] == ' ':
+        C[3] = 'S'
+
+    elif A[3] == 'S' and B[3] == 'O' and C[3] == ' ':
+        C[3] = 'S'
+    elif B[3] == 'S' and C[3] == 'O' and D[3] == ' ':
+        D[3] = 'S'
+    elif C[3] == 'S' and D[3] == 'O' and E[3] == ' ':
+        E[3] == 'S'
+
+    elif A[4] == 'S' and C[4] == 'S' and B[4] == ' ':
+        B[4] = 'O'
+    elif B[4] == 'S' and D[4] == 'S' and C[4] == ' ':
+        C[4] = 'O'
+    elif C[4] == 'S' and E[4] == 'S' and D[4] == ' ':
+        D[4] == 'O'
+
+    elif B[4] == 'O' and C[4] == 'S' and A[4] == ' ':
+        A[4] = 'S'
+    elif C[4] == 'O' and D[4] == 'S' and B[4] == ' ':
+        B[4] = 'S'
+    elif D[4] == 'O' and E[4] == 'S' and C[4] == ' ':
+        C[4] = 'S'
+
+    elif A[4] == 'S' and B[4] == 'O' and C[4] == ' ':
+        C[4] = 'S'
+    elif B[4] == 'S' and C[4] == 'O' and D[4] == ' ':
+        D[4] = 'S'
+    elif C[4] == 'S' and D[4] == 'O' and E[4] == ' ':
+        E[4] == 'S'
+
+    #diag \
+    elif A[0] == 'S' and C[2] == 'S' and B[1] == ' ':
+        B[1] = 'O'
+    elif B[0] == 'S' and D[2] == 'S' and C[1] == ' ':
+        C[1] = 'O'
+    elif C[0] == 'S' and E[2] == 'S' and D[1] == ' ':
+        D[1] = 'O'
+
+    elif B[1] == 'O' and C[2] == 'S' and A[0] == ' ':
+        A[0] = 'S'
+    elif C[1] == 'O' and D[2] == 'S' and B[0] == ' ':
+        B[0] = 'S'
+    elif C[1] == 'O' and C[2] == 'S' and C[0] == ' ':
+        C[0] = 'S'
+
+    elif A[0] == 'S' and B[1] == 'O' and C[2] == ' ':
+        C[2] = 'S'
+    elif B[0] == 'S' and C[1] == 'O' and D[2] == ' ':
+        D[2] = 'S'
+    elif E[0] == 'S' and D[1] == 'O' and C[2] == ' ':
+        C[2] = 'S'
+
+    elif A[1] == 'S' and C[3] == 'S' and B[2] == ' ':
+        B[2] = 'O'
+    elif B[1] == 'S' and D[3] == 'S' and C[2] == ' ':
+        C[2] = 'O'
+    elif C[1] == 'S' and E[3] == 'S' and D[2] == ' ':
+        D[2] = 'O'
+
+    elif B[2] == 'O' and C[3] == 'S' and A[1] == ' ':
+        A[1] = 'S'
+    elif C[2] == 'O' and D[3] == 'S' and B[1] == ' ':
+        B[1] = 'S'
+    elif C[2] == 'O' and C[3] == 'S' and C[1] == ' ':
+        C[1] = 'S'
+
+    elif A[1] == 'S' and B[2] == 'O' and C[3] == ' ':
+        C[3] = 'S'
+    elif B[1] == 'S' and C[2] == 'O' and D[3] == ' ':
+        D[3] = 'S'
+    elif E[1] == 'S' and D[2] == 'O' and C[3] == ' ':
+        C[3] = 'S'
+
+    elif A[2] == 'S' and C[4] == 'S' and B[3] == ' ':
+        B[3] = 'O'
+    elif B[2] == 'S' and D[4] == 'S' and C[3] == ' ':
+        C[3] = 'O'
+    elif C[2] == 'S' and E[4] == 'S' and D[3] == ' ':
+        D[3] = 'O'
+
+    elif B[3] == 'O' and C[4] == 'S' and A[2] == ' ':
+        A[2] = 'S'
+    elif C[3] == 'O' and D[4] == 'S' and B[2] == ' ':
+        B[2] = 'S'
+    elif C[3] == 'O' and C[4] == 'S' and C[2] == ' ':
+        C[2] = 'S'
+
+    elif A[2] == 'S' and B[3] == 'O' and C[4] == ' ':
+        C[4] = 'S'
+    elif B[2] == 'S' and C[3] == 'O' and D[4] == ' ':
+        D[4] = 'S'
+    elif E[2] == 'S' and D[3] == 'O' and C[4] == ' ':
+        C[4] = 'S'
+
+    #diag /
+    elif A[4] == 'S' and C[2] == 'S' and B[3] == ' ':
+        B[4] = 'O'
+    elif B[4] == 'S' and D[2] == 'S' and C[3] == ' ':
+        C[3] = 'O'
+    elif C[4] == 'S' and E[2] == 'S' and D[3] == ' ':
+        D[3] = 'O'
+
+    elif B[3] == 'O' and C[2] == 'S' and A[4] == ' ':
+        A[4] = 'S'
+    elif C[3] == 'O' and D[2] == 'S' and B[4] == ' ':
+        B[4] = 'S'
+    elif D[3] == 'O' and E[2] == 'S' and C[4] == ' ':
+        C[4] = 'S'
+
+    elif A[4] == 'S' and B[3] == 'O' and C[2] == ' ':
+        C[2] = 'S'
+    elif B[4] == 'S' and C[3] == 'O' and D[2] == ' ':
+        D[2] = 'S'
+    elif C[4] == 'S' and D[3] == 'O' and E[2] == ' ':
+        E[2] = 'S'
+
+    elif A[3] == 'S' and C[1] == 'S' and B[2] == ' ':
+        B[3] = 'O'
+    elif B[3] == 'S' and D[1] == 'S' and C[2] == ' ':
+        C[2] = 'O'
+    elif C[3] == 'S' and E[1] == 'S' and D[2] == ' ':
+        D[2] = 'O'
+
+    elif B[2] == 'O' and C[1] == 'S' and A[3] == ' ':
+        A[3] = 'S'
+    elif C[2] == 'O' and D[1] == 'S' and B[3] == ' ':
+        B[3] = 'S'
+    elif D[2] == 'O' and E[1] == 'S' and C[3] == ' ':
+        C[3] = 'S'
+
+    elif A[3] == 'S' and B[2] == 'O' and C[1] == ' ':
+        C[1] = 'S'
+    elif B[3] == 'S' and C[2] == 'O' and D[1] == ' ':
+        D[1] = 'S'
+    elif C[3] == 'S' and D[2] == 'O' and E[1] == ' ':
+        E[1] = 'S'
+
+    elif A[2] == 'S' and C[0] == 'S' and B[1] == ' ':
+        B[2] = 'O'
+    elif B[2] == 'S' and D[0] == 'S' and C[1] == ' ':
+        C[1] = 'O'
+    elif C[2] == 'S' and E[0] == 'S' and D[1] == ' ':
+        D[1] = 'O'
+
+    elif B[1] == 'O' and C[0] == 'S' and A[2] == ' ':
+        A[2] = 'S'
+    elif C[1] == 'O' and D[0] == 'S' and B[2] == ' ':
+        B[2] = 'S'
+    elif D[1] == 'O' and E[0] == 'S' and C[2] == ' ':
+        C[2] = 'S'
+
+    elif A[2] == 'S' and B[1] == 'O' and C[0] == ' ':
+        C[0] = 'S'
+    elif B[2] == 'S' and C[1] == 'O' and D[0] == ' ':
+        D[0] = 'S'
+    elif C[2] == 'S' and D[1] == 'O' and E[0] == ' ':
+        E[0] = 'S'
+
     randalpha = random.choice(grid)
     randnum = random.randint(0,4)
     so = ['S','O']
     plyernum += 1
-    while y == None:
-        if plyernum % 2 != 0:
-            if randalpha == "A":
-                if A[randnum] == " ":
-                    A[randnum] = random.choice(so)
-                else:
-                    continue
-            elif randalpha == "B":
-                if B[randnum] == " ":
-                    B[randnum] = random.choice(so)
-                else:
-                    continue
-            elif randalpha == "C":
-                if C[randnum] == " ":
-                    C[randnum] = random.choice(so)
-                else:
-                    continue
-            elif randalpha == "D":
-                if D[randnum] == " ":
-                    D[randnum] = random.choice(so)
-                else:
-                    continue
-            elif randalpha == "E":
-                if E[randnum] == " ":
-                    E[randnum] = random.choice(so)
-                else:
-                    continue
+    while plyernum % 2 != 0:
+        if randalpha == "A":
+            if A[randnum] == " ":
+                A[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "B":
+            if B[randnum] == " ":
+                B[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "C":
+            if C[randnum] == " ":
+                C[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "D":
+            if D[randnum] == " ":
+                D[randnum] = random.choice(so)
+            else:
+                continue
+        elif randalpha == "E":
+            if E[randnum] == " ":
+                E[randnum] = random.choice(so)
+            else:
+                continue
