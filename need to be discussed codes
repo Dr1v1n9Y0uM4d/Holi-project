@@ -93,9 +93,10 @@ counter_check()
 
 plyer = 0
 
+playermode()
+
 def spot_check():
     x = None
-    locat = ""
     for i in range(5):
         x = int(locat[1])
         if locat[0] == "A":
