@@ -418,7 +418,7 @@ def playermode ():
         elif D[1] == "S" and D[2] == "O" and D[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
             sys.exit()
-        elif D[2] == "S" and D[3] == "O" and D4] == "S":
+        elif D[2] == "S" and D[3] == "O" and D[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
             sys.exit()
 
@@ -545,3 +545,4 @@ def playermode ():
     print ("^^^ game end ^^^ \n [[[ no winner ]]]")
     sys.exit()
 
+playermode()
