@@ -349,9 +349,8 @@ def ai():
         
             ttt()
             
-counter = False
-
 def counter_check():
+    counter = False
     for i in range(len(grid)):
         if A[i] == " ":
             counter = False
