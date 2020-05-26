@@ -115,7 +115,8 @@ def ai():
     randnum = random.randint(0,4)
     so = ['S','O']
     while y == None:
-        if plyernum % 2 == 0:
+        if plyernum % 2 != 0:
+            plyernum += 1
             if randalpha == "A":
                 if A[randnum] == " ":
                     A[randnum] = random.choice(so)
