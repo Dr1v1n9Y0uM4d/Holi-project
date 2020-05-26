@@ -288,68 +288,63 @@ def ai():
                     E[2-i] = 'S'
 
                 else:
+                    for i in range(5):
+                        #vert
+                        if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
+                            B[i] = 'O'
+                        elif B[i] == 'S' and D[i] == 'S' and C[i] == ' ':
+                            C[i] = 'O'
+                        elif C[i] == 'S' and E[i] == 'S' and D[i] == ' ':
+                            D[i] == 'O'
 
-#from here to
-                for i in range(5):
-                    #vert
-                    if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
-                        B[i] = 'O'
-                    elif B[i] == 'S' and D[i] == 'S' and C[i] == ' ':
-                        C[i] = 'O'
-                    elif C[i] == 'S' and E[i] == 'S' and D[i] == ' ':
-                        D[i] == 'O'
+                        elif B[i] == 'O' and C[i] == 'S' and A[i] == ' ':
+                            A[i] = 'S'
+                        elif C[i] == 'O' and D[i] == 'S' and B[i] == ' ':
+                            B[i] = 'S'
+                        elif D[i] == 'O' and E[i] == 'S' and C[i] == ' ':
+                            C[i] = 'S'
 
-                    elif B[i] == 'O' and C[i] == 'S' and A[i] == ' ':
-                        A[i] = 'S'
-                    elif C[i] == 'O' and D[i] == 'S' and B[i] == ' ':
-                        B[i] = 'S'
-                    elif D[i] == 'O' and E[i] == 'S' and C[i] == ' ':
-                        C[i] = 'S'
+                        elif A[i] == 'S' and B[i] == 'O' and C[i] == ' ':
+                            C[i] = 'S'
+                        elif B[i] == 'S' and C[i] == 'O' and D[i] == ' ':
+                            D[i] = 'S'
+                        elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
+                            E[i] == 'S'
 
-                    elif A[i] == 'S' and B[i] == 'O' and C[i] == ' ':
-                        C[i] = 'S'
-                    elif B[i] == 'S' and C[i] == 'O' and D[i] == ' ':
-                        D[i] = 'S'
-                    elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
-                        E[i] == 'S'
+                        else: 
+                            y = None
 
-                    else: 
-                        y = None
-#here one space
-
-#here to             
-            randalpha = random.choice(grid)
-            randnum = random.randint(0,4)
-            so = ['S','O']
-            plyernum = plyer
-            while y == None:
-                if plyernum % 2 != 0:
-                    if randalpha == "A":
-                        if A[randnum] == " ":
-                            A[randnum] = random.choice(so)
-                        else:
-                            continue
-                    elif randalpha == "B":
-                        if B[randnum] == " ":
-                            B[randnum] = random.choice(so)
-                        else:
-                            continue
-                    elif randalpha == "C":
-                        if C[randnum] == " ":
-                            C[randnum] = random.choice(so)
-                        else:
-                            continue
-                    elif randalpha == "D":
-                        if D[randnum] == " ":
-                            D[randnum] = random.choice(so)
-                        else:
-                            continue
-                    elif randalpha == "E":
-                        if E[randnum] == " ":
-                            E[randnum] = random.choice(so)
-                        else:
-                            continue
-#here is 3 space
+                        randalpha = random.choice(grid)
+                        randnum = random.randint(0,4)
+                        so = ['S','O']
+                        plyernum = plyer
+                        while y == None:
+                            if plyernum % 2 != 0:
+                                if randalpha == "A":
+                                    if A[randnum] == " ":
+                                        A[randnum] = random.choice(so)
+                                    else:
+                                        continue
+                                elif randalpha == "B":
+                                    if B[randnum] == " ":
+                                        B[randnum] = random.choice(so)
+                                    else:
+                                        continue
+                                elif randalpha == "C":
+                                    if C[randnum] == " ":
+                                        C[randnum] = random.choice(so)
+                                    else:
+                                        continue
+                                elif randalpha == "D":
+                                    if D[randnum] == " ":
+                                        D[randnum] = random.choice(so)
+                                    else:
+                                        continue
+                                elif randalpha == "E":
+                                    if E[randnum] == " ":
+                                        E[randnum] = random.choice(so)
+                                    else:
+                                        continue
 
             ttt()
             
