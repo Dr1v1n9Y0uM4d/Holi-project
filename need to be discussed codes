@@ -203,7 +203,6 @@ def ai():
         else:
             print ("<<< AI\'s turn >>>")
             plyer += 1
-
             for i in range(3):
                 #hori
                 if A[i] == "S" and A[i+2] == "S" and A[i+1] == " ":
@@ -289,9 +288,8 @@ def ai():
                     E[2-i] = 'S'
 
                 else:
-                    y = True
 
-            if y == True:
+#from here to
                 for i in range(5):
                     #vert
                     if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
@@ -317,7 +315,9 @@ def ai():
 
                     else: 
                         y = None
+#here one space
 
+#here to             
             randalpha = random.choice(grid)
             randnum = random.randint(0,4)
             so = ['S','O']
@@ -349,7 +349,10 @@ def ai():
                             E[randnum] = random.choice(so)
                         else:
                             continue
+#here is 3 space
 
+            ttt()
+            
 counter = False
 
 def counter_check():
