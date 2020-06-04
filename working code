@@ -24,7 +24,7 @@ elif info == "1":
     info = None
 
 print (" ")
-mode = 2
+mode = "2"
 print ("<<< players >>>")
 play1 = input ("Enter player 1 name: ")
 play2 = input ("Enter player 2 name: ")
