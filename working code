@@ -332,18 +332,23 @@ while not (restart == "Yes" or restart == "No"):
     print ("### input error ###")
     restart = input ("Do you want to restart the game? (Yes / No) :")
 
-while restart == "No" or restart == "Yes":
-    if restart == "No":
-        print ("!!! exit !!!")
-        sys.exit()
-    elif restart == "Yes":
-        ttt()
-        print ("2 player mode activated")
-        print (" ")
-        playermode()
-
-while restart == "Yes" or mode == "":
+while mode == "2":
     ttt()
     print ("2 player mode activated")
     print (" ")
     playermode()
+
+    restart = input ("Do you want to restart the game? (Yes / No) :")
+    while not (restart == "Yes" or restart == "yes" or restart == "No" or restart == "no"):
+        print ("### input error ###")
+        restart = input ("Do you want to restart the game? (Yes / No) :")
+ 
+    while restart == "No" or restart == "Yes":
+        if restart == "No":
+            print ("!!! exit !!!")
+            sys.exit()
+        elif restart == "Yes":
+            ttt()
+            print ("2 player mode activated")
+            print (" ")
+            playermode()
