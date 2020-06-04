@@ -327,17 +327,12 @@ def playermode ():
 
     print ("^^^ game end ^^^ \n [[[ no winner ]]]")
 
-restart = input ("Do you want to restart the game? (Yes / No) :")
-while not (restart == "Yes" or restart == "No"):
-    print ("### input error ###")
-    restart = input ("Do you want to restart the game? (Yes / No) :")
+ttt()
+print ("2 player mode activated")
+print (" ")
+playermode()
 
 while mode == "2":
-    ttt()
-    print ("2 player mode activated")
-    print (" ")
-    playermode()
-
     restart = input ("Do you want to restart the game? (Yes / No) :")
     while not (restart == "Yes" or restart == "yes" or restart == "No" or restart == "no"):
         print ("### input error ###")
