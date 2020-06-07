@@ -24,13 +24,10 @@ elif info == "1":
     info = None
 
 print (" ")
-mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ") 
+mode = "2"
 print ("<<< players >>>")
 play1 = input ("Enter player 1 name: ")
-if mode == '2':
-    play2 = input ("Enter player 2 name: ")
-
-# we can try to do the mode ltr on but like i just wanna put it here
+play2 = input ("Enter player 2 name: ")
 
 grid = ["A","B","C","D","E"]
 
@@ -55,9 +52,6 @@ def ttt():
         count += 1
     print (hline)
 
-while not(mode == "1" or mode == "2"):
-    print ("### invalid input ###")
-    mode = input ("Press 1 for AI mode and press 2 for 2 player mode: ")
 
 def spot_check():
     inpt = input("What would you like to put in (S or O): ")
@@ -180,175 +174,6 @@ def spot_check():
 
 
 
-def ai():
-    y = None
-    plyer = 0
-    while mode == "1":
-        if plyer % 2 == 0:
-            print ("<<< " + play1 + " >>>")
-            plyer += 1
-            inpt = input("What would you like to put in (S or O): ")
-            inpt = inpt.upper()
-            while not (inpt == "S" or inpt == "O"):
-                print ("### invalid input ###")
-                inpt = input("What would you like to put in (S or O): ")
-                inpt = inpt.upper()
-
-            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-            locat = locat.upper()
-            while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-                print ("### invalid input ###")
-                locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-                locat = locat.upper()
-            ttt()
-        else:
-            print ("<<< AI\'s turn >>>")
-            plyer += 1
-            for i in range(3):
-                #hori
-                if A[i] == "S" and A[i+2] == "S" and A[i+1] == " ":
-                    A[i+1] = "O"
-                    break
-                elif B[i] == "S" and B[i+2] == "S" and B[i+1] == " ":
-                    B[i+1] = "O"
-                    break
-                elif C[i] == "S" and C[i+2] == "S" and C[i+1] == " ":
-                    C[i+1] = "O"
-                    break
-                elif D[i] == "S" and D[i+2] == "S" and D[i+1] == " ":
-                    D[i+1] = "O"
-                    break
-                elif E[i] == "S" and E[i+2] == "S" and E[i+1] == " ":
-                    E[i+1] = "O"
-                    break
-
-                elif A[i+1] == "O" and A[i+2] == "S" and A[i] == " ":
-                    A[i] = "S"
-                elif B[i+1] == "O" and B[i+2] == "S" and B[i] == " ":
-                    B[i] = "S"
-                elif C[i+1] == "O" and C[i+2] == "S" and C[i] == " ":
-                    C[i] = "S"
-                elif D[i+1] == "O" and D[i+2] == "S" and D[i] == " ":
-                    D[i] = "S"
-                elif E[i+1] == "O" and E[i+2] == "S" and E[i] == " ":
-                    E[i] = "S"
-
-                elif A[i+1] == "O" and A[i] == "S" and A[i+2] == " ":
-                    A[i+2] = "S"
-                elif B[i+1] == "O" and B[i] == "S" and B[i+2] == " ":
-                    B[i+2] = "S"
-                elif C[i+1] == "O" and C[i] == "S" and C[i+2] == " ":
-                    C[i+2] = "S"
-                elif D[i+1] == "O" and D[i] == "S" and D[i+2] == " ":
-                    D[i+2] = "S"
-                elif E[i+1] == "O" and E[i] == "S" and E[i+2] == " ":
-                    E[i+2] = "S"
-
-                #diag \
-                elif A[i] == 'S' and C[i+2] == 'S' and B[i+1] == ' ':
-                    B[i+1] = 'O'
-                elif B[i] == 'S' and D[i+2] == 'S' and C[i+1] == ' ':
-                    C[i+1] = 'O'
-                elif C[i] == 'S' and E[i+2] == 'S' and D[i+1] == ' ':
-                    D[i+1] = 'O'
-
-                elif B[i+1] == 'O' and C[i+2] == 'S' and A[i] == ' ':
-                    A[i] = 'S'
-                elif C[i+1] == 'O' and D[i+2] == 'S' and B[i] == ' ':
-                    B[i] = 'S'
-                elif C[i+1] == 'O' and C[i+2] == 'S' and C[i] == ' ':
-                    C[i] = 'S'
-
-                elif A[i] == 'S' and B[i+1] == 'O' and C[i+2] == ' ':
-                    C[i+2] = 'S'
-                elif B[i] == 'S' and C[i+1] == 'O' and D[i+2] == ' ':
-                    D[i+2] = 'S'
-                elif E[i] == 'S' and D[i+1] == 'O' and C[i+2] == ' ':
-                    C[i+2] = 'S'
-
-                #diag /
-                elif A[4-i] == 'S' and C[2-i] == 'S' and B[3-i] == ' ':
-                    B[4-i] = 'O'
-                elif B[4-i] == 'S' and D[2-i] == 'S' and C[3-i] == ' ':
-                    C[3-i] = 'O'
-                elif C[4-i] == 'S' and E[2-i] == 'S' and D[3-i] == ' ':
-                    D[3-i] = 'O'
-
-                elif B[3-i] == 'O' and C[2-i] == 'S' and A[4-i] == ' ':
-                    A[4-i] = 'S'
-                elif C[3-i] == 'O' and D[2-i] == 'S' and B[4-i] == ' ':
-                    B[4-i] = 'S'
-                elif D[3-i] == 'O' and E[2-i] == 'S' and C[4-i] == ' ':
-                    C[4-i] = 'S'
-
-                elif A[4-i] == 'S' and B[3-i] == 'O' and C[2-i] == ' ':
-                    C[2-i] = 'S'
-                elif B[4-i] == 'S' and C[3-i] == 'O' and D[2-i] == ' ':
-                    D[2-i] = 'S'
-                elif C[4-i] == 'S' and D[3-i] == 'O' and E[2-i] == ' ':
-                    E[2-i] = 'S'
-
-                else:
-                    for i in range(5):
-                        #vert
-                        if A[i] == 'S' and C[i] == 'S' and B[i] == ' ':
-                            B[i] = 'O'
-                        elif B[i] == 'S' and D[i] == 'S' and C[i] == ' ':
-                            C[i] = 'O'
-                        elif C[i] == 'S' and E[i] == 'S' and D[i] == ' ':
-                            D[i] == 'O'
-
-                        elif B[i] == 'O' and C[i] == 'S' and A[i] == ' ':
-                            A[i] = 'S'
-                        elif C[i] == 'O' and D[i] == 'S' and B[i] == ' ':
-                            B[i] = 'S'
-                        elif D[i] == 'O' and E[i] == 'S' and C[i] == ' ':
-                            C[i] = 'S'
-
-                        elif A[i] == 'S' and B[i] == 'O' and C[i] == ' ':
-                            C[i] = 'S'
-                        elif B[i] == 'S' and C[i] == 'O' and D[i] == ' ':
-                            D[i] = 'S'
-                        elif C[i] == 'S' and D[i] == 'O' and E[i] == ' ':
-                            E[i] == 'S'
-
-                        else: 
-                            y = None
-
-                        randalpha = random.choice(grid)
-                        randnum = random.randint(0,4)
-                        so = ['S','O']
-                        plyernum = plyer
-                        while y == None:
-                            if plyernum % 2 != 0:
-                                if randalpha == "A":
-                                    if A[randnum] == " ":
-                                        A[randnum] = random.choice(so)
-                                    else:
-                                        continue
-                                elif randalpha == "B":
-                                    if B[randnum] == " ":
-                                        B[randnum] = random.choice(so)
-                                    else:
-                                        continue
-                                elif randalpha == "C":
-                                    if C[randnum] == " ":
-                                        C[randnum] = random.choice(so)
-                                    else:
-                                        continue
-                                elif randalpha == "D":
-                                    if D[randnum] == " ":
-                                        D[randnum] = random.choice(so)
-                                    else:
-                                        continue
-                                elif randalpha == "E":
-                                    if E[randnum] == " ":
-                                        E[randnum] = random.choice(so)
-                                    else:
-                                        continue
-        
-            ttt()
-
 counter = False
 def counter_check():
     counter = False
@@ -383,177 +208,220 @@ def playermode ():
         counter_check()
         print (" ")            
         ttt()
-    
+
+        if plyer % 2 == 0:
+            winner = play2
+        else:
+            winner = play1
+                
         if A[0] == "S" and A[1] == "O" and A[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[1] == "S" and A[2] == "O" and A[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[2] == "S" and A[2] == "O" and A[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
+            
 
         elif B[0] == "S" and B[1] == "O" and B[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[1] == "S" and B[2] == "O" and B[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[2] == "S" and B[3] == "O" and B[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif C[0] == "S" and C[1] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[1] == "S" and C[2] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[2] == "S" and C[3] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif D[0] == "S" and D[1] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif D[1] == "S" and D[2] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif D[2] == "S" and D[3] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif E[0] == "S" and E[1] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif E[1] == "S" and E[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif E[2] == "S" and E[3] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[1] == "S" and B[1] == "O" and C[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[1] == "S" and C[1] == "O" and D[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[1] == "S" and D[1] == "O" and E[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[0] == "S" and B[0] == "O" and C[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[0] == "S" and C[0] == "O" and D[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[0] == "S" and D[0] == "O" and E[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[2] == "S" and B[2] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[2] == "S" and C[2] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[2] == "S" and D[2] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[3] == "S" and B[3] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[3] == "S" and C[3] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[3] == "S" and D[3] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[4] == "S" and B[4] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[4] == "S" and C[4] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[4] == "S" and D[4] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[0] == "S" and B[1] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[1] == "S" and B[2] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[2] == "S" and B[3] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif B[0] == "S" and C[1] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[1] == "S" and C[2] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[2] == "S" and C[3] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[2] == "S" and D[3] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif A[4] == "S" and B[3] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[3] == "S" and B[2] == "O" and C[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif A[2] == "S" and B[1] == "O" and C[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif B[4] == "S" and C[3] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[3] == "S" and C[2] == "O" and D[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif B[2] == "S" and C[1] == "O" and D[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
         elif C[4] == "S" and D[3] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[3] == "S" and D[2] == "O" and E[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
         elif C[2] == "S" and D[1] == "O" and E[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
-            sys.exit()
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            break
 
-    print ("^^^ game end ^^^ \n [[[ no winner ]]]")
-    sys.exit()
+        elif counter == True:
+            print ("^^^ game end ^^^ \n [[[ no winner ]]]")
+            break
+    return winner 
 
-if mode == "1":
-    ttt()
-    print ("AI mode activated")
-    print (" ")
-    ai()
-elif mode == "2":
-    ttt()
-    print ("2 player mode activated")
-    print (" ")
-    playermode()
+ttt()
+print ("2 player mode activated")
+print (" ")
+#playermode()
+
+def restarting():
+    if restart == "No" or restart == "no":
+        print ("!!! exit !!!")
+        sys.exit()
+    elif restart == "Yes" or restart == "yes":
+        for i in range(5):
+            if counter == False or counter == True:
+                A[i] = " "
+                B[i] = " "
+                C[i] = " "
+                D[i] = " "
+                E[i] = " "
+        ttt()
+        print ("2 player mode activated")
+        print (" ")
+        scoring()
+
+
+def scoring():
+    winner = playermode()
+    
+    score = [0,0]
+    p1_score = score[0]
+    p2_score = score[1]
+    if winner == play1:
+        p1_score += 1
+    elif winner == play2:
+        p2_score += 1
+    score = [p1_score, p2_score]
+    print(play1, ":", play2)
+    print(score[0], ":", score[1])
+    return score 
+
+while mode == "2":
+    scoring()
+    restart = input ("Do you want to restart the game? (Yes / No) :")
+    while not (restart == "Yes" or restart == "yes" or restart == "No" or restart == "no"):
+        print ("### input error ###")
+        restart = input ("Do you want to restart the game? (Yes / No) :")
+    restarting()
