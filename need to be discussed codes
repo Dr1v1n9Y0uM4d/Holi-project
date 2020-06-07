@@ -402,11 +402,10 @@ def restarting():
         print (" ")
         scoring()
 
-
+score = [0,0]
 def scoring():
     winner = playermode()
-    
-    score = [0,0]
+    global score
     p1_score = score[0]
     p2_score = score[1]
     if winner == play1:
@@ -419,7 +418,7 @@ def scoring():
     return score 
 
 while mode == "2":
-    scoring()
+    score = scoring()
     restart = input ("Do you want to restart the game? (Yes / No) :")
     while not (restart == "Yes" or restart == "yes" or restart == "No" or restart == "no"):
         print ("### input error ###")
