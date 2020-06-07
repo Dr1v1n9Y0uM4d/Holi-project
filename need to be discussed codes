@@ -192,7 +192,7 @@ def counter_check():
             counter = True
 
 counter_check()
-
+winner = None
 def playermode ():
     plyer = 0 
     while counter == False:
@@ -208,7 +208,7 @@ def playermode ():
         counter_check()
         print (" ")            
         ttt()
-
+        global winner
         if plyer % 2 == 0:
             winner = play2
         else:
@@ -378,7 +378,7 @@ def playermode ():
         elif counter == True:
             print ("^^^ game end ^^^ \n [[[ no winner ]]]")
             break
-    return winner 
+
 
 ttt()
 print ("2 player mode activated")
@@ -402,12 +402,15 @@ def restarting():
         print (" ")
         scoring()
 
+
 score = [0,0]
 def scoring():
-    winner = playermode()
+    playermode()
+    global winner
     global score
     p1_score = score[0]
     p2_score = score[1]
+    print(winner)
     if winner == play1:
         p1_score += 1
     elif winner == play2:
