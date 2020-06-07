@@ -208,166 +208,171 @@ def playermode ():
         counter_check()
         print (" ")            
         ttt()
-    
+
+        if plyer % 2 == 0:
+            winner = play2
+        else:
+            winner = play1
+                
         if A[0] == "S" and A[1] == "O" and A[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[1] == "S" and A[2] == "O" and A[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[2] == "S" and A[2] == "O" and A[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
             
 
         elif B[0] == "S" and B[1] == "O" and B[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[1] == "S" and B[2] == "O" and B[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[2] == "S" and B[3] == "O" and B[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif C[0] == "S" and C[1] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[1] == "S" and C[2] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[2] == "S" and C[3] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif D[0] == "S" and D[1] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif D[1] == "S" and D[2] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif D[2] == "S" and D[3] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif E[0] == "S" and E[1] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif E[1] == "S" and E[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif E[2] == "S" and E[3] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[1] == "S" and B[1] == "O" and C[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[1] == "S" and C[1] == "O" and D[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[1] == "S" and D[1] == "O" and E[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[0] == "S" and B[0] == "O" and C[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[0] == "S" and C[0] == "O" and D[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[0] == "S" and D[0] == "O" and E[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[2] == "S" and B[2] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[2] == "S" and C[2] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[2] == "S" and D[2] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[3] == "S" and B[3] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[3] == "S" and C[3] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[3] == "S" and D[3] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[4] == "S" and B[4] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[4] == "S" and C[4] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[4] == "S" and D[4] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[0] == "S" and B[1] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[1] == "S" and B[2] == "O" and C[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[2] == "S" and B[3] == "O" and C[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif B[0] == "S" and C[1] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[1] == "S" and C[2] == "O" and D[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[2] == "S" and C[3] == "O" and D[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[2] == "S" and D[3] == "O" and E[4] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif A[4] == "S" and B[3] == "O" and C[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[3] == "S" and B[2] == "O" and C[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif A[2] == "S" and B[1] == "O" and C[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif B[4] == "S" and C[3] == "O" and D[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[3] == "S" and C[2] == "O" and D[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif B[2] == "S" and C[1] == "O" and D[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif C[4] == "S" and D[3] == "O" and E[2] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[3] == "S" and D[2] == "O" and E[1] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
         elif C[2] == "S" and D[1] == "O" and E[0] == "S":
-            print ("^^^ game end ^^^ \n [[[ winner is the last player ]]]")
+            print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
             break
 
         elif counter == True:
