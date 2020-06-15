@@ -63,10 +63,11 @@ def spot_check():
 
     locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
     locat = locat.upper()
-    while (not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
-        print ("### invalid input ###")
-        locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
-        locat = locat.upper()
+    while len(locat) != 2:
+        if(not (locat[0] == "A" or locat[0] == "B" or locat[0] == "C" or locat[0] == "D" or locat[0] == "E")) or (not (locat[1] == "1" or locat[1] == "2" or locat[1] == "3" or locat[1] == "4" or locat[1] == "5")):
+            print ("### invalid input ###")
+            locat = input("Where would you like to place your S/O (eg: A1, B2, C3, D4, E5): ")
+            locat = locat.upper()
     
     x = None
     for i in range(5):
@@ -174,8 +175,10 @@ def spot_check():
 
 
 
-counter = False
+global counter
+#counter = False
 def counter_check():
+    global counter
     counter = False
     for i in range(len(grid)):
         if A[i] == " ":
@@ -194,7 +197,9 @@ def counter_check():
 counter_check()
 winner = None
 def playermode ():
-    plyer = 0 
+    plyer = 0
+    counter_check()
+    #global counter
     while counter == False:
         if mode == "2": 
             if plyer % 2 == 0:
@@ -205,7 +210,6 @@ def playermode ():
                 plyer += 1
         
         spot_check()
-        counter_check()
         print (" ")            
         ttt()
         global winner
@@ -213,166 +217,214 @@ def playermode ():
             winner = play2
         else:
             winner = play1
-                
         if A[0] == "S" and A[1] == "O" and A[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[1] == "S" and A[2] == "O" and A[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[2] == "S" and A[2] == "O" and A[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
             
 
         elif B[0] == "S" and B[1] == "O" and B[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[1] == "S" and B[2] == "O" and B[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[2] == "S" and B[3] == "O" and B[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif C[0] == "S" and C[1] == "O" and C[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[1] == "S" and C[2] == "O" and C[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[2] == "S" and C[3] == "O" and C[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif D[0] == "S" and D[1] == "O" and D[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif D[1] == "S" and D[2] == "O" and D[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif D[2] == "S" and D[3] == "O" and D[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif E[0] == "S" and E[1] == "O" and E[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif E[1] == "S" and E[2] == "O" and E[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif E[2] == "S" and E[3] == "O" and E[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[1] == "S" and B[1] == "O" and C[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[1] == "S" and C[1] == "O" and D[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[1] == "S" and D[1] == "O" and E[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[0] == "S" and B[0] == "O" and C[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[0] == "S" and C[0] == "O" and D[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[0] == "S" and D[0] == "O" and E[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[2] == "S" and B[2] == "O" and C[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[2] == "S" and C[2] == "O" and D[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[2] == "S" and D[2] == "O" and E[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[3] == "S" and B[3] == "O" and C[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[3] == "S" and C[3] == "O" and D[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            global counter
+            counter = True
             break
         elif C[3] == "S" and D[3] == "O" and E[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[4] == "S" and B[4] == "O" and C[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[4] == "S" and C[4] == "O" and D[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[4] == "S" and D[4] == "O" and E[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[0] == "S" and B[1] == "O" and C[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[1] == "S" and B[2] == "O" and C[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[2] == "S" and B[3] == "O" and C[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif B[0] == "S" and C[1] == "O" and D[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[1] == "S" and C[2] == "O" and D[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[2] == "S" and C[3] == "O" and D[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[1] == "S" and D[2] == "O" and E[3] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[2] == "S" and D[3] == "O" and E[4] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif A[4] == "S" and B[3] == "O" and C[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[3] == "S" and B[2] == "O" and C[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif A[2] == "S" and B[1] == "O" and C[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif B[4] == "S" and C[3] == "O" and D[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[3] == "S" and C[2] == "O" and D[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif B[2] == "S" and C[1] == "O" and D[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif C[4] == "S" and D[3] == "O" and E[2] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[3] == "S" and D[2] == "O" and E[1] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
         elif C[2] == "S" and D[1] == "O" and E[0] == "S":
             print ("^^^ game end ^^^ \n [[[ winner is {}]]]".format(winner))
+            counter = True
             break
 
         elif counter == True:
@@ -383,25 +435,6 @@ def playermode ():
 ttt()
 print ("2 player mode activated")
 print (" ")
-#playermode()
-
-def restarting():
-    if restart == "No" or restart == "no":
-        print ("!!! exit !!!")
-        sys.exit()
-    elif restart == "Yes" or restart == "yes":
-        for i in range(5):
-            if counter == False or counter == True:
-                A[i] = " "
-                B[i] = " "
-                C[i] = " "
-                D[i] = " "
-                E[i] = " "
-        ttt()
-        print ("2 player mode activated")
-        print (" ")
-        scoring()
-
 
 score = [0,0]
 def scoring():
@@ -417,12 +450,65 @@ def scoring():
     score = [p1_score, p2_score]
     print(play1, ":", play2)
     print(score[0], ":", score[1])
-    return score 
+    #return score 
 
-while mode == "2":
-    score = scoring()
+restart = None
+while mode == "2": 
+    scoring()
+    global restart
     restart = input ("Do you want to restart the game? (Yes / No) :")
-    while not (restart == "Yes" or restart == "yes" or restart == "No" or restart == "no"):
+    restart = restart.lower()
+    while not (restart == "yes" or restart == "no"):
         print ("### input error ###")
         restart = input ("Do you want to restart the game? (Yes / No) :")
+    restart = restart.lower()
+    
+    def restarting():
+        if restart == "no":
+            print ("!!! exit !!!")
+            sys.exit()
+        elif restart == "yes":
+            reset = input("Do you want to change the name of the players? ")
+            reset = reset.lower()
+            print(reset)
+            if reset == "yes":
+                global play1
+                play1 = input("What is the name of player 1: ")
+                global play2
+                play2 = input("What is the name of player 2: ")
+                
+            elif reset != "no" or reset != "yes":
+                while reset != "yes" or reset != "no":
+                    print("Invalid input01")
+                    reset = input("Do you want to change the name of the players? ")
+
+            scores = input("Do you want to keep the previous scores? ")
+            scores = scores.lower()
+            if scores == "no":
+                global score
+                score = [0,0]
+            elif scores != 'yes':
+                while scores != 'no' or scores != 'yes':
+                    print("Invalid input1")
+                    scores = input("Do you want to keep the previous scores? ")
+            
+            print("Player 1 is " + play1)
+            print("Player 2 is " + play2)
+            print("The score:")
+            print(play1, ":", play2)
+            print(score[0], ":", score[1])
+                
+            for i in range(5):
+                if counter == False or counter == True:
+                    A[i] = " "
+                    B[i] = " "
+                    C[i] = " "
+                    D[i] = " "
+                    E[i] = " "
+            ttt()
+            print ("2 player mode activated")
+            print (" ")
+            scoring()
+            
     restarting()
+
